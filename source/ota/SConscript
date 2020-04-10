@@ -1,0 +1,15 @@
+# RT-Thread building script for component
+
+from building import *
+
+cwd = GetCurrentDir()
+src = Glob('rt_fota.c')
+src += Glob('rt_fota_crc.c')
+CPPPATH = [cwd]
+
+#if GetDepend('BSP_USING_FOTA'):
+
+
+group = DefineGroup('ota', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')
